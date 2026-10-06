@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\logo.ico</ApplicationIcon>
+    <AssemblyName>WindowsRepairToolkit</AssemblyName>
+    <RootNamespace>WindowsRepairToolkit</RootNamespace>
+
+    <!-- Release metadata. All values can be overridden with -p:Property=Value. -->
+    <!-- Release scripts pass text metadata through environment-backed MSBuild properties.
+         This avoids native-command quoting issues for values containing spaces. -->
+    <Product Condition="'$(WrtProduct)' != ''">$(WrtProduct)</Product>
+    <Company Condition="'$(WrtPublisher)' != ''">$(WrtPublisher)</Company>
+    <Authors Condition="'$(WrtPublisher)' != ''">$(WrtPublisher)</Authors>
+    <Description Condition="'$(WrtDescription)' != ''">$(WrtDescription)</Description>
+    <Copyright Condition="'$(WrtCopyright)' != ''">$(WrtCopyright)</Copyright>
+
+    <Product Condition="'$(Product)' == ''">Windows Repair Toolkit</Product>
+    <Company Condition="'$(Company)' == ''">JK</Company>
+    <Authors Condition="'$(Authors)' == ''">JK</Authors>
+    <Description Condition="'$(Description)' == ''">Windows system health, repair, cleanup, and performance maintenance.</Description>
+    <Copyright Condition="'$(Copyright)' == ''">Copyright © 2026 JK</Copyright>
+    <NeutralLanguage>en-US</NeutralLanguage>
+
+    <Version Condition="'$(Version)' == ''">1.0.0</Version>
+    <FileVersion Condition="'$(FileVersion)' == ''">1.0.0.0</FileVersion>
+    <AssemblyVersion Condition="'$(AssemblyVersion)' == ''">1.0.0.0</AssemblyVersion>
+    <InformationalVersion Condition="'$(InformationalVersion)' == ''">$(Version)</InformationalVersion>
+
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\logo.png" />
+    <Resource Include="Assets\logo.ico" />
+  </ItemGroup>
+</Project>
